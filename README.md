@@ -1,8 +1,6 @@
-# Ast::Navigator
+# AST::Navigator
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/ast/navigator`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+`AST::Navigator` provides some utility functions for `AST::Node` objects, including *parent(node)*, *ancestors(node)*, *siblings(node)*.
 
 ## Installation
 
@@ -22,7 +20,26 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```rb
+require "ast/navigator"
+
+navigator = AST::Navigator.new()
+
+# Add root node to navigator
+navigator.add_root_node(node)
+
+# Returns parent node or nil
+navigator.parent(node.children[0])
+
+# Returns array of ancestor nodes
+navigator.ancestors(node.children[0].children[1].children[3])
+
+# Yields child node of given node, non AST::Node children will be ignored
+navigator.each_child(node) do ... end
+
+# Yields sibling nodes of given node, non AST::Node siblings will be ignored
+navigator.each_sibling(node) do ... end
+```
 
 ## Development
 
@@ -32,5 +49,5 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/ast-navigator.
+Bug reports and pull requests are welcome on GitHub at https://github.com/soutaro/ast-navigator.
 

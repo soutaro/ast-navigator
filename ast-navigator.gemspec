@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Soutaro Matsumoto"]
   spec.email         = ["matsumoto@soutaro.com"]
 
-  spec.summary       = %q{Navigate AST nodes}
-  spec.description   = %q{Navigate AST nodes}
+  spec.summary       = %q{Utility functions for AST::Node}
+  spec.description   = %q{Utility functions for AST::Node}
   spec.homepage      = "https://github.com/soutaro/ast-navigator"
 
   spec.files         = `git ls-files -z`.split("\x0").reject do |f|
